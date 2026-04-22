@@ -8,29 +8,52 @@
     <link rel="icon" type="image/x-icon" href="angkorwat.png">
 </head>
 <style>
-body {background-color: #e5e8e8;}
-h1,h2   {background-color: purple;color: white;}
-p    {color: purple;}
-footer {color: purple;}
-blockquote {color:purple}
-img {border: 3px solid purple; }
-table, 		
-th,
-td {border: 2px solid purple;}
+  body { background-color: #e5e8e8; font-family: sans-serif; margin: 0; padding: 10px; }
+  h1, h2 { background-color: purple; color: white; padding: 10px; }
+  p, footer, blockquote { color: purple; }
+  img { border: 3px solid purple; max-width: 100%; height: auto; }
+  table, th, td { border: 2px solid purple; }
 
-.nan 
-{
-    background-color:#f5eef8;
-    color:darkblue;
-	width:100%;
-    margin:20px;
-    padding:20px;
-}
-.mycontainer {
-display:flex;
+  /* Flexbox Container */
+  .mycontainer {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to drop to the next line on small screens */
+    gap: 20px;       /* Adds space between the columns */
+    justify-content: center;
+  }
 
-}
+  /* Style for each temple card in the flex container */
+  .mycontainer > div {
+    background-color: #f5eef8;
+    padding: 15px;
+    flex: 1;          /* Grows to fill space */
+    min-width: 300px; /* Prevents them from getting too skinny */
+    box-sizing: border-box;
+  }
 
+  .box {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+  }
+
+  /* RESPONSIVE FIX FOR PHONES */
+  @media (max-width: 768px) {
+    .mycontainer {
+      flex-direction: column; /* Stacks items vertically on mobile */
+    }
+    
+    .mycontainer > div {
+      width: 100%; /* Ensures full width on mobile */
+    }
+
+    /* Resizes the specific large images for mobile */
+    .mycontainer img {
+      width: 100% !important; 
+      height: auto !important;
+    }
+  }
 </style>
 
 <body>
