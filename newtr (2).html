@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <title>Angkor</title>
+    <link rel="icon" type="image/x-icon" href="angkorwat.png">
+</head>
+<style>
+    body {
+      background-color: #e5e8e8;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    h1, h2 {
+      background-color: purple;
+      color: white;
+      margin: 0;
+      padding: 6px 8px;
+    }
+
+    p { color: purple; font-size: 0.85em; padding: 4px; }
+    footer { color: purple; }
+    blockquote { color: purple; }
+    img { border: 3px solid purple; }
+    table, th, td { border: 2px solid purple; }
+
+    .nan {
+      background-color: #f5eef8;
+      color: darkblue;
+      width: 100%;
+      margin: 20px 0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    /* Banner */
+    .banner-wrapper {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .banner-wrapper img {
+      width: 100%;
+      height: 550px;
+      object-fit: cover;
+      border: none;
+    }
+
+    /* Visit link */
+    .visit-link {
+      padding: 4px 8px;
+      font-size: 14px;
+    }
+
+    .visit-link a {
+      color: #1a0dab;
+    }
+
+    /* Purple scrolling header */
+    .header-bar {
+      background-color: purple;
+      padding: 10px 0;
+      overflow: hidden;
+    }
+
+    /* White gap between header bar and temple grid */
+    .header-gap {
+      height: 20px;
+      background-color: #e5e8e8;
+    }
+
+    /* Three columns */
+    .temple-grid {
+      display: table;
+      width: 100%;
+      border-spacing: 0;
+      table-layout: fixed;
+    }
+
+    .temple-col {
+      display: table-cell;
+      width: 33.33%;
+      vertical-align: top;
+      padding: 0;
+      background-color: #e5e8e8;
+    }
+
+    .temple-col:nth-child(2) {
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+
+    .temple-col h2 {
+      margin: 0 0 6px 0;
+    }
+
+    .temple-col img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+      box-sizing: border-box;
+    }
+
+    .temple-col p {
+      margin: 6px 0 0 0;
+      padding: 0 4px;
+    }
+
+    /* Section header */
+    .section-header {
+      background-color: purple;
+      color: white;
+      font-size: 1.1em;
+      font-weight: bold;
+      padding: 6px 8px;
+      margin-top: 16px;
+    }
+
+    /* Match .nan h2 font size to section-header */
+    .nan h2 {
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+
+    .gap {
+      height: 10px;
+      background-color: #e5e8e8;
+    }
+
+    /* ── Slideshow ── */
+    .slideshow-wrapper {
+      position: relative;
+      width: 100%;
+      margin-top: 10px;
+      overflow: hidden;
+    }
+
+    .slideshow-wrapper img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      display: none;
+      border: 3px solid purple;
+      box-sizing: border-box;
+    }
+
+    .slideshow-wrapper img.active {
+      display: block;
+    }
+
+    /* Left / Right arrow buttons */
+    .slide-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255, 255, 255, 0.7);
+      border: none;
+      font-size: 2em;
+      padding: 8px 14px;
+      cursor: pointer;
+      z-index: 10;
+      color: purple;
+      font-weight: bold;
+    }
+
+    .slide-btn:hover {
+      background-color: rgba(255, 255, 255, 0.95);
+    }
+
+    .slide-btn.left  { left: 0; }
+    .slide-btn.right { right: 0; }
+  </style>
+</head>
+<body>
+
+  <!-- Sliding Banner -->
+  <div class="banner-wrapper">
+    <marquee behavior="slide" direction="down">
+      <img src="banner.jpg" alt="tourism" style="width:100%; border:none;">
+    </marquee>
+  </div>
+
+  <!-- Visit Link -->
+  <div class="visit-link">
+    <a href="https://cost.uc.edu.kh/">Visit Cambodia Tourism</a>
+  </div>
+
+  <!-- Scrolling Purple Header -->
+  <div class="header-bar">
+    <marquee behavior="scroll" direction="right" scrollamount="8">
+      <h1 style="display:inline; background:none; padding:0;">
+        <img src="jj.png" alt="Icon"
+             style="width:80px; height:60px; border:none; vertical-align:middle;">
+        🌸 <em>Kingdom of Wonder Tourism</em> 🌸
+      </h1>
+    </marquee>
+  </div>
+
+  <!-- White space gap between header and temple columns -->
+  <div class="header-gap"></div>
+
+  <!-- Three Temple Columns -->
+  <div class="temple-grid">
+ <div class="temple-col">
+      <h2>Angkor Wat</h2>
+      <img src="angkorwat.jpg" alt="tourism">
+      <p>Angkor Wat is a temple complex in Cambodia and the largest religious monument in the world.</p>
+    </div>
+
+    <div class="temple-col">
+      <h2>Angkor Thom</h2>
+      <img src="angkor2.jpg" alt="tourism">
+      <p>The south gate of Angkor Thom is most popular with visitors, as it has been fully restored
+        and many of the heads (mostly copies) remain in place. The gate is on the main road into
+        Angkor Thom from Angkor Wat.</p>
+    </div>
+
+    <div class="temple-col">
+      <h2>Banteay Srei</h2>
+      <img src="angkor3.jpg" alt="tourism">
+      <p>Banteay Srei or Banteay Srey (Khmer: បន្ទាយស្រី) is a 10th-century Cambodian temple
+        dedicated to the Hindu god Shiva. Located in the area of Angkor, it lies near the hill
+        of Phnom Dei, 25 km (16 mi) north-east.</p>
+    </div>
+
+  </div>
